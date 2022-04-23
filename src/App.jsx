@@ -1,16 +1,19 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Menu from './pages/Menu'
-import Details from './pages/Details'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { UserProvider } from './context/appContext';
+import Details from './pages/Details';
+import Menu from './pages/Menu';
 
 function App() {
   return (
     <>
-      <BrowserRouter>
-        <Routes>
-          <Route path='/' element={<Menu />} />
-          <Route path='/details/:id' element={<Details />} />
-        </Routes>
-      </BrowserRouter>
+      <UserProvider>
+        <Router>
+          <Routes>
+            <Route path='/' element={<Menu />} />
+            <Route path='/details/:id' element={<Details />} />
+          </Routes>
+        </Router>
+      </UserProvider>
     </>
   );
 }
