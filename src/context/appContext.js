@@ -50,8 +50,13 @@ export const UserProvider = ({ children }) => {
     ])
   }
 
+  const deleteUser = (id) => {
+    let filter = cards.filter(card => card.id !== id)
+    setCards(filter)
+  }
+
   return (
-    <Context.Provider value={{ textInput, setTextInput, colorPicker, setColorPicker, cards, setCards, colors, createNewUser }}>
+    <Context.Provider value={{ textInput, setTextInput, colorPicker, setColorPicker, cards, setCards, colors, createNewUser, deleteUser }}>
       {children}
     </Context.Provider>
   )

@@ -1,8 +1,8 @@
 import React from 'react';
-import './CreateUsers.css'
 import { useContext } from 'react';
-import { CirclePicker } from 'react-color'
+import { CirclePicker } from 'react-color';
 import { Context } from '../../context/appContext';
+import './CreateUsers.css';
 
 const CreateUsers = () => {
 
@@ -12,14 +12,16 @@ const CreateUsers = () => {
     <>
       <section className='container-create'>
         <input className='create-input' type="text" placeholder='Nombre' onChange={text => setTextInput(text.target.value)} />
-        <div className='create-colorPicker'>
-          <CirclePicker
-            color={colorPicker}
-            colors={colors}
-            onChangeComplete={color => setColorPicker(color.hex)}
-          />
+        <div>
+          <div className='create-colorPicker'>
+            <CirclePicker
+              color={colorPicker}
+              colors={colors}
+              onChangeComplete={color => setColorPicker(color.hex)}
+            />
+          </div>
+          <button className='create-button' onClick={createNewUser}>Create</button>
         </div>
-        <button className='create-button' onClick={createNewUser}>Create</button>
       </section>
     </>
   );

@@ -1,12 +1,15 @@
 import React from 'react';
 import CreateUsers from '../../containers/CreateUsers';
 import UsersList from '../../containers/UsersList';
+import './Menu.css'
 
 const Menu = () => {
   return (
     <>
-      <CreateUsers />
-      <UsersList />
+      <main className='main-container'>
+        <CreateUsers />
+        <UsersList />
+      </main>
     </>
   );
 }
