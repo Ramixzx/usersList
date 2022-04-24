@@ -6,12 +6,13 @@ import './UsersList.css'
 
 const UsersList = () => {
 
-  const { cards, deleteUser } = useContext(Context);
+  const { cards, deleteUser, api } = useContext(Context);
 
   return (
     <>
       <section className='container-cards'>
-        <ul>
+        {/* Utilizando una lista de usuarios hardcodeada */}
+        {/* <ul>
           {
             cards.map(user => (
               <li className='card'
@@ -24,6 +25,25 @@ const UsersList = () => {
               </li>
             ))
           }
+        </ul> */}
+        {/* --------------------------------------------------------------------------------------------------------------------------------------> */}
+        {/* Utilizando una lista de usuarios traidas desde una API */}
+        <ul>
+          {
+            api !== undefined
+              ? api.map(character => (
+                <li className='card'
+                  style={{ backgroundColor: character.backgroundColor ? character.backgroundColor : 'var(--backgroundColor-spaceGuru)' }}
+                  key={uuidv4()}
+                >
+                  <img className='card-image' src={character.image} alt="Avatar" />
+                  <h2 className='card-p'>{character.name}</h2>
+                  <button className='card-button' onClick={() => deleteUser(character.id)}>Delete</button>
+                </li>
+              ))
+              :
+              <p>Loading...</p>
+          }
         </ul>
       </section>
     </>
@@ -31,3 +51,5 @@ const UsersList = () => {
 }
 
 export default UsersList;
+
+
