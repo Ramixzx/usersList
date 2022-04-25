@@ -36,3 +36,23 @@
   color: var(--color-letters);
   cursor: pointer;
 }
+
+@media (max-width: 1400px) {
+  .container-create {
+    width: 80%;
+  }
+}
+
+
+@media (max-width: 800px) {
+  .container-create {
+    width: 30rem;
+    margin: 3rem auto;
+  }
+
+  .container-create>div {
+    width: 30rem;
+    justify-content: space-around;
+    align-items: center;
+  }
+}

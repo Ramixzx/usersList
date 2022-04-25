@@ -6,3 +6,11 @@
   align-items: center;
   margin: 3rem auto;
 }
+
+@media (max-width: 640px) {
+  .main-container {
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+}

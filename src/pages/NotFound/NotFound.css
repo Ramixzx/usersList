@@ -22,3 +22,9 @@
   background-color: papayawhip;
   cursor: pointer;
 }
+
+@media (max-width: 640px) {
+  .pageNotFound {
+    text-align: center;
+  }
+}

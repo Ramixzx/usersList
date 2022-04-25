@@ -1,5 +1,7 @@
 .container-cards {
   width: 80%;
+  display: flex;
+  place-self: center;
 }
 
 .container-cards ul {
@@ -7,7 +9,7 @@
   grid-template-columns: 1fr 1fr;
   grid-auto-rows: 1fr;
   gap: 2rem;
-  justify-content: space-between;
+  margin: 0 auto;
 }
 
 .card {
@@ -17,8 +19,8 @@
   list-style: none;
   padding: 2rem;
   border-radius: 1rem;
-  min-width: 42rem;
-  min-height: 9.2rem;
+  width: 42rem;
+  height: 9.2rem;
 }
 
 .card-image {
@@ -30,19 +32,19 @@
 
 .card-p {
   width: 22rem;
-  max-height: 5.2rem;
+  max-height: 5.3rem;
   font-weight: bold;
   font-size: 2rem;
   word-wrap: break-word;
   text-align: center;
   color: black;
   overflow-y: auto;
+  margin-left: 3.5rem;
 }
 
-ul a {
+.link-container {
   text-decoration: none;
   display: flex;
-  justify-content: center;
   align-items: center;
 }
 
@@ -61,4 +63,41 @@ ul a {
   background-color: rgb(227, 36, 36);
   color: var(--color-letters);
   cursor: pointer;
+}
+
+
+@media (max-width: 1400px) {
+  .container-cards {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .container-cards ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 1fr;
+    gap: 2rem;
+    margin: 0 auto;
+  }
+
+  .card {
+    width: 30rem;
+    padding: 1rem;
+  }
+
+  .card-p {
+    width: 12rem;
+    margin-left: 1.2rem;
+  }
+
+}
+
+@media (max-width: 800px) {
+  .container-cards ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
 }
