@@ -6,9 +6,26 @@
   align-items: center;
 }
 
+.cardView-back {
+  position: absolute;
+  top: 3.2rem;
+  left: 3.2rem;
+  width: 8rem;
+  height: 4rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  font-style: italic;
+  border-radius: 1rem;
+}
+
+.cardView-back:hover {
+  background-color: papayawhip;
+  cursor: pointer;
+}
+
 .cardView {
-  width: 40%;
-  height: 40rem;
+  width: 35rem;
+  height: 45rem;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -20,16 +37,19 @@
 
 .cardView-id {
   width: 6rem;
-  height: 3rem;
+  min-height: 3rem;
+  max-height: 6.2rem;
   padding: 0.3rem;
   position: absolute;
   top: 0;
-  right: 2rem;
+  right: 1.3rem;
   text-align: center;
   border: 0.2rem solid black;
   border-radius: 1rem;
   margin: 1rem auto;
   font-weight: bold;
+  overflow: hidden;
+  background-color: white;
 }
 
 .cardView-image {
@@ -37,6 +57,11 @@
   height: 18rem;
   object-fit: cover;
   border-radius: 50%;
+  border: 0.2rem solid black;
+}
+
+.cardView-title {
+  text-align: center;
 }
 
 .cardView-button {

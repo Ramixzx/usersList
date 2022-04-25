@@ -40,6 +40,7 @@ export const UserProvider = ({ children }) => {
   const [textInput, setTextInput] = useState();
   const [colorPicker, setColorPicker] = useState(colors[0]);
   const [cards, setCards] = useState(users);
+  const [userInfo, setUserInfo] = useState();
 
   useEffect(() => {
     const fetchApi = async () => {
@@ -65,7 +66,7 @@ export const UserProvider = ({ children }) => {
     //     backgroundColor: colorPicker
     //   }
     // ])
-    {/* --------------------------------------------------------------------------------------------------------------------------------------> */ }
+    {/* --------------------------------------------------------------------------------------------------------------------> */ }
     // Para usar lista de la API: 
     return setApi([
       ...api,
@@ -83,14 +84,14 @@ export const UserProvider = ({ children }) => {
     // Para usar lista hardcodeada: 
     // let filterCards = cards.filter(card => card.id !== id)
     // setCards(filterCards)
-    {/* --------------------------------------------------------------------------------------------------------------------------------------> */ }
+    {/* --------------------------------------------------------------------------------------------------------------------> */ }
     // // Para usar lista de la API: 
     let filterCharacters = api.filter(character => character.id !== id)
     setApi(filterCharacters)
   }
 
   return (
-    <Context.Provider value={{ textInput, setTextInput, colorPicker, setColorPicker, cards, setCards, colors, createNewUser, deleteUser, api }}>
+    <Context.Provider value={{ textInput, setTextInput, colorPicker, setColorPicker, cards, setCards, colors, createNewUser, deleteUser, api, userInfo, setUserInfo }}>
       {children}
     </Context.Provider>
   )
