@@ -14,12 +14,12 @@
 
 .card {
   display: flex;
+  width: 42rem;
   justify-content: space-between;
   align-items: center;
   list-style: none;
   padding: 2rem;
   border-radius: 1rem;
-  width: 42rem;
   height: 9.2rem;
 }
 

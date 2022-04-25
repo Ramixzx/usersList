@@ -13,7 +13,7 @@
 .cardView-id {
   width: 6rem;
   min-height: 3rem;
-  max-height: 6.2rem;
+  max-height: 5.1rem;
   padding: 0.3rem;
   position: absolute;
   top: 0;
@@ -55,4 +55,36 @@
   background-color: rgb(227, 36, 36);
   color: var(--color-letters);
   cursor: pointer;
+}
+
+@media (max-width: 800px) {
+  .cardView {
+    width: 24rem;
+    height: 34rem;
+  }
+
+  .cardView-image {
+    width: 18rem;
+    height: 15rem;
+  }
+
+  .cardView-title {
+    font-size: 2.4rem;
+  }
+
+  .cardView-button {
+    width: 14rem;
+    height: 4.5rem;
+  }
+
+  .cardView-id {
+    width: 4rem;
+    min-height: 1rem;
+    max-height: 3.2rem;
+    font-size: 1rem;
+    padding: 0.1rem;
+    top: -0.4rem;
+    right: 0.8rem;
+    overflow-x: hidden;
+  }
 }

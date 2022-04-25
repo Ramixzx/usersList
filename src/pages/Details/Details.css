@@ -23,3 +23,13 @@
   background-color: papayawhip;
   cursor: pointer;
 }
+
+@media (max-width: 800px) {
+  .cardView-back {
+    top: 1.2rem;
+    left: 1.2rem;
+    width: 6rem;
+    height: 3rem;
+    font-size: 1.2rem;
+  }
+}
