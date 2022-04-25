@@ -15,6 +15,7 @@
   font-size: 1.6rem;
   font-weight: bold;
   font-style: italic;
+  font-family: 'DM Sans', sans-serif;
   border-radius: 1rem;
 }
 
@@ -65,8 +66,8 @@
 }
 
 .cardView-button {
-  width: 8rem;
-  height: 3.6rem;
+  width: 15rem;
+  height: 5rem;
   font-size: 1.6rem;
   font-weight: bold;
   border-radius: 1rem;

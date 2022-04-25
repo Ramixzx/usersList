@@ -20,7 +20,7 @@ const UsersList = () => {
                 style={{ backgroundColor: user.backgroundColor }}
                 key={uuidv4()}
               >
-                <Link to={`/details/${user.id}`}>
+                <Link to={`/details/${user.id}` onClick={() => setUserInfo(user)}}>
                   <img className='card-image' src={defaultAvatar} alt="Avatar" />
                   <p className='card-p'>{user.name}</p>
                 </Link>
