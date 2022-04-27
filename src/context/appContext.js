@@ -12,26 +12,31 @@ const users = [
     id: 1,
     name: 'Ramiro',
     backgroundColor: colors[0],
+    image: defaultAvatar,
   },
   {
     id: 2,
     name: 'Rocco',
     backgroundColor: colors[1],
+    image: defaultAvatar,
   },
   {
     id: 3,
     name: 'Roman',
     backgroundColor: colors[3],
+    image: defaultAvatar,
   },
   {
     id: 4,
     name: 'Renata',
     backgroundColor: colors[2],
+    image: defaultAvatar,
   },
   {
     id: 5,
     name: 'Claudia',
     backgroundColor: colors[4],
+    image: defaultAvatar,
   },
 ]
 
@@ -58,18 +63,8 @@ export const UserProvider = ({ children }) => {
 
   const createNewUser = () => {
     // Para usar lista hardcodeada: 
-    // return setCards([
-    //   ...cards,
-    //   {
-    //     id: uuidv4(),
-    //     name: textInput,
-    //     backgroundColor: colorPicker
-    //   }
-    // ])
-    {/* --------------------------------------------------------------------------------------------------------------------> */ }
-    // Para usar lista de la API: 
-    return setApi([
-      ...api,
+    return setCards([
+      ...cards,
       {
         id: uuidv4(),
         name: textInput,
@@ -77,17 +72,28 @@ export const UserProvider = ({ children }) => {
         image: defaultAvatar,
       }
     ])
+    {/* --------------------------------------------------------------------------------------------------------------------> */ }
+    // Para usar lista de la API: 
+    // return setApi([
+    //   ...api,
+    //   {
+    //     id: uuidv4(),
+    //     name: textInput,
+    //     backgroundColor: colorPicker,
+    //     image: defaultAvatar,
+    //   }
+    // ])
 
   }
 
   const deleteUser = (id) => {
     // Para usar lista hardcodeada: 
-    // let filterCards = cards.filter(card => card.id !== id)
-    // setCards(filterCards)
+    let filterCards = cards.filter(card => card.id !== id)
+    setCards(filterCards)
     {/* --------------------------------------------------------------------------------------------------------------------> */ }
     // // Para usar lista de la API: 
-    let filterCharacters = api.filter(character => character.id !== id)
-    setApi(filterCharacters)
+    // let filterCharacters = api.filter(character => character.id !== id)
+    // setApi(filterCharacters)
   }
 
   return (

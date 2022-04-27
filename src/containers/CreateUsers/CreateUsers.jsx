@@ -11,7 +11,7 @@ const CreateUsers = () => {
   return (
     <>
       <section className='container-create'>
-        <input className='create-input' type="text" placeholder='Nombre' onChange={text => setTextInput(text.target.value)} />
+        <input className='create-input' type="text" placeholder='Nombre' onClick={text => text.target.value = ''} onChange={text => setTextInput(text.target.value)} />
         <div>
           <div className='create-colorPicker'>
             <CirclePicker
