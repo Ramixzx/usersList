@@ -46,6 +46,7 @@ export const UserProvider = ({ children }) => {
   const [colorPicker, setColorPicker] = useState(colors[0]);
   const [cards, setCards] = useState(users);
   const [userInfo, setUserInfo] = useState();
+  const [mood, setMood] = useState(true);
 
   useEffect(() => {
     const fetchApi = async () => {
@@ -62,9 +63,19 @@ export const UserProvider = ({ children }) => {
   }, [])
 
   const createNewUser = () => {
-    // Para usar lista hardcodeada: 
-    return setCards([
-      ...cards,
+    if (mood) {
+      return setCards([
+        ...cards,
+        {
+          id: uuidv4(),
+          name: textInput,
+          backgroundColor: colorPicker,
+          image: defaultAvatar,
+        }
+      ])
+    }
+    return setApi([
+      ...api,
       {
         id: uuidv4(),
         name: textInput,
@@ -72,32 +83,19 @@ export const UserProvider = ({ children }) => {
         image: defaultAvatar,
       }
     ])
-    {/* --------------------------------------------------------------------------------------------------------------------> */ }
-    // Para usar lista de la API: 
-    // return setApi([
-    //   ...api,
-    //   {
-    //     id: uuidv4(),
-    //     name: textInput,
-    //     backgroundColor: colorPicker,
-    //     image: defaultAvatar,
-    //   }
-    // ])
-
   }
 
   const deleteUser = (id) => {
-    // Para usar lista hardcodeada: 
-    let filterCards = cards.filter(card => card.id !== id)
-    setCards(filterCards)
-    {/* --------------------------------------------------------------------------------------------------------------------> */ }
-    // // Para usar lista de la API: 
-    // let filterCharacters = api.filter(character => character.id !== id)
-    // setApi(filterCharacters)
+    if (mood) {
+      let filterCards = cards.filter(card => card.id !== id)
+      setCards(filterCards)
+    }
+    let filterCharacters = api.filter(character => character.id !== id)
+    setApi(filterCharacters)
   }
 
   return (
-    <Context.Provider value={{ textInput, setTextInput, colorPicker, setColorPicker, cards, setCards, colors, createNewUser, deleteUser, api, userInfo, setUserInfo }}>
+    <Context.Provider value={{ textInput, setTextInput, colorPicker, setColorPicker, cards, setCards, colors, createNewUser, deleteUser, api, userInfo, setUserInfo, mood, setMood }}>
       {children}
     </Context.Provider>
   )

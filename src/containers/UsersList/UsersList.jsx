@@ -6,38 +6,16 @@ import './UsersList.css'
 
 const UsersList = () => {
 
-  const { cards, deleteUser, api, setUserInfo } = useContext(Context);
+  const { mood, cards, deleteUser, api, setUserInfo } = useContext(Context);
 
   return (
     <>
       <section className='container-cards'>
-        {/* Utilizando una lista de usuarios hardcodeada */}
         <ul>
           {
-            cards !== undefined
+            (mood ? cards : api) !== undefined
               ?
-              cards.map(user => (
-                <li className='card'
-                  style={{ backgroundColor: user.backgroundColor }}
-                  key={uuidv4()}
-                >
-                  <Link className='link-container' to={`/details/${user.id}`} onClick={() => setUserInfo(user)}>
-                    <img className='card-image' src={user.image} alt="Avatar" />
-                    <p className='card-p'>{user.name}</p>
-                  </Link>
-                  <button className='card-button' onClick={() => deleteUser(user.id)}>Delete</button>
-                </li>
-              ))
-              :
-              <p>Loading...</p>
-          }
-        </ul>
-        {/*------------------------------------------------------------------------------------------------------------------> */}
-        {/* Utilizando una lista de usuarios traidas desde una API */}
-        {/* <ul>
-          {
-            api !== undefined
-              ? api.map(user => (
+              (mood ? cards : api).map(user => (
                 <li className='card'
                   style={{ backgroundColor: user.backgroundColor ? user.backgroundColor : 'var(--backgroundColor-spaceGuru)' }}
                   key={uuidv4()}
@@ -52,7 +30,7 @@ const UsersList = () => {
               :
               <p>Loading...</p>
           }
-        </ul> */}
+        </ul>
       </section>
     </>
   );
